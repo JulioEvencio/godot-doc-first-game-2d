@@ -11,7 +11,7 @@ func _ready() -> void:
 	hide()
 
 func _process(delta : float) -> void:
-	var velocity = Vector2.ZERO
+	var velocity : Vector2 = Vector2.ZERO
 	
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -39,7 +39,7 @@ func _process(delta : float) -> void:
 		$AnimatedSprite2D.animation = "up"
 		$AnimatedSprite2D.flip_v = velocity.y > 0
 
-func start(pos):
+func start(pos : Vector2):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
